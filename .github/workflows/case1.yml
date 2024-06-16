@@ -13,7 +13,9 @@ jobs:
       DOCKER_FILE_DIR: "case1-FastAPI-CloudRun"
       PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       REGION: ${{ secrets.GCP_REGION }}
-      SERVICE_NAME: "case1-fastapi-cloudrun"
+      SERVICE_NAME: ${{ secrets.GCP_SERVICE_NAME }}
+      DOCKER_FILE_DIR: "case1-fastapi-cloudrun"
+
 
     steps:
       - name: Checkout repository
