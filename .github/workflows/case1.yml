@@ -11,7 +11,7 @@ jobs:
 
     env:
       DOCKER_FILE_DIR: "case1-FastAPI-CloudRun"
-      IMAGE: ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_IDPROJECT_ID }}/${{ secrets.GCP_SERVICE_ACCOUNT_NAME }}/${{ secrets.GCP_SERVICE_ACCOUNT_NAME }}-${{ github.ref_name }}:${{ github.sha }}
+      IMAGE: ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_SERVICE_NAME }}/${{ secrets.GCP_SERVICE_NAME }}-${{ github.ref_name }}:${{ github.sha }}
 
     steps:
       - name: Checkout repository
