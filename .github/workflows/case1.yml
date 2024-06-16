@@ -26,12 +26,12 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
 
       - name: Configure Docker for Artifact Registry
-        run: gcloud auth configure-docker ${{env.REGION}}-docker.pkg.dev
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build & Push Docker image
         run: |
-          docker build -t ${{IMAGE}} -f ${{env.DOCKERFILE_DIR}}/Dockerfile ${{env.DOCKERFILE_DIR}}/
-          docker push ${{IMAGE}}
+          docker build -t ${{ env.IMAGE }} -f ${{ env.DOCKERFILE_DIR }}/Dockerfile ${{ env.DOCKERFILE_DIR }}/
+          docker push ${{ env.IMAGE }}
 
       # - name: Set up Terraform
       #   uses: hashicorp/setup-terraform@v1
