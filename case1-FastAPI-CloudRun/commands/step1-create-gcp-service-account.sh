@@ -10,9 +10,7 @@ if [ ! -f .env ]; then
 fi
 
 # .envファイルの読み込み
-set -a
 source .env
-set +a
 
 # プロジェクトIDを設定
 PROJECT_ID="${GCP_PROJECT_ID}"
@@ -47,6 +45,11 @@ gcloud iam service-accounts create $SERVICE_NAME \
 gcloud projects add-iam-policy-binding $PROJECT_ID \
   --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
   --role="roles/iam.serviceAccountUser"
+
+# Artifact Registryへの書き込み権限を付与
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/artifactregistry.writer"
 
 # ----------------------------------------
 # サービスアカウントキーの作成
