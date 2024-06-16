@@ -14,7 +14,7 @@ source .env
 
 # プロジェクトIDを設定
 PROJECT_ID="${GCP_PROJECT_ID}"
-SERVICE_NAME="${GCP_SERVICE_ACCOUNT_NAME}"
+SERVICE_NAME="${GCP_SERVICE_NAME}"
 REGION="${GCP_REGION}"
 
 # ----------------------------------------
